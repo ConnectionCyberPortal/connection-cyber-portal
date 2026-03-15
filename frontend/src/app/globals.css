@@ -1,0 +1,46 @@
+/**
+ * CONNECTION CYBER PORTAL | THEME SYSTEM
+ * -------------------------------------------------------------------------
+ * ARQUIVO: frontend/src/app/globals.css
+ * OBJETIVO: Definição de Variáveis para Multi-Temas (Emerald vs IgrejasWebOS)
+ * GOVERNANÇA: PGT-01 (NORMA EXTREMO ZERO)
+ * -------------------------------------------------------------------------
+ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* TEMA PADRÃO: CYBER EMERALD (Dark Mode) */
+:root {
+  --background: #000000;
+  --foreground: #ffffff;
+  --primary: #10b981; /* Emerald */
+  --accent: #3b82f6;  /* Blue Detail */
+  --border: rgba(39, 39, 42, 0.5); /* Zinc-800/50 */
+  --card-bg: rgba(24, 24, 27, 0.4); /* Zinc-900/40 */
+}
+
+/* TEMA: IGREJAS WEBOS (Light/Institutional Mode) */
+[data-theme='igrejas'] {
+  --background: #E6E6E6; /* Cinza Muito Claro */
+  --foreground: #013057; /* Azul-Petróleo Escuro */
+  --primary: #18568B;    /* Azul Escuro Base */
+  --accent: #B19052;     /* Dourado WebOS */
+  --border: rgba(1, 48, 87, 0.2);
+  --card-bg: rgba(255, 255, 255, 0.8);
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+  transition: background-color 0.5s ease, color 0.5s ease;
+  margin: 0;
+}
+
+@layer utilities {
+  .text-theme-primary { color: var(--primary); }
+  .bg-theme-card { background-color: var(--card-bg); }
+  .border-theme { border-color: var(--border); }
+}
